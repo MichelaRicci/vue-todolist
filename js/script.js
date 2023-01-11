@@ -34,7 +34,17 @@ const app = Vue.createApp({
        ]}
     },
 
-    
+    methods: {
+        deleteItem(index) {
+  
+         this.items.splice(index, 1);
+        
+        },
+    }
+
+
+
+
 
 
 

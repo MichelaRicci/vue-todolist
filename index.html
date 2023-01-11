@@ -29,10 +29,14 @@
                         <ul v-if="items.length > 0">
                             <li v-for="(element) in items" :class="(element.done === true) ? 'line-through' : ''" @click="done(element)">
                                 {{ element.text }}
+
+                                <button type="button" class="btn-close" @click="deleteItem(i)"></button>
                             </li>
                         </ul>
                     </div>
                 </div>
+
+
 
 
             </div>

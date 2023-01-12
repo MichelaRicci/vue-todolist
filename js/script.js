@@ -35,11 +35,31 @@ const app = Vue.createApp({
     },
 
     methods: {
-        deleteItem(index) {
-  
-         this.items.splice(index, 1);
-        
+
+
+        addItem() {
+
+            if(this.newItem) {
+
+            const item = {done: false, text: this.newItem};
+            this.items.push(item);
+
+            this.clearInput();
+        }
         },
+
+        clearInput() {
+            this.newItem.text = ':'
+        },
+
+
+
+        deleteItem(index) {
+            this.items.splice(index, 1);
+        },
+
+
+    
     }
 
 

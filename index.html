@@ -21,19 +21,24 @@
     <div id="root">
 
         <div class="container-fluid">
-            <div id="todo" class="mx-auto mt-5 d-flex">
+            <div class="mx-auto mt-5 d-flex">
 
 
                 <div class="row">
                     <div class="col-12">
-                        <ul v-if="items.length > 0">
-                            <li v-for="(element) in items" :class="(element.done === true) ? 'line-through' : ''" @click="done(element)">
-                                {{ element.text }}
+                        <ul>
+                            <li v-for="(item, i) in items" :class="(item.done === true) ? 'line-through' : '' ">
+                                {{ item.text }}
 
                                 <button type="button" class="btn-close" @click="deleteItem(i)"></button>
                             </li>
                         </ul>
                     </div>
+
+                    <div>
+                        <input type="text" class="form-control" placeholder="Aggiungi un task" v-model.trim="newItem">
+                        <button class="btn btn-outline-success" type="button" @click="addItem">Aggiungi</button>
+                    </div> 
                 </div>
 
 
